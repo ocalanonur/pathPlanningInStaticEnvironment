@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using pathPlanning2.classes;
-using System.Windows;
+using System.IO;
 
 namespace pathPlanning2
 {
@@ -34,10 +34,11 @@ namespace pathPlanning2
         #endregion
 
         #region PathPlanningVariables
-        string gameMapString = "Map6";
-        int sampleSize = 20;
-        int depth = 2;
+        string gameMapString = "Map61";
+        int sampleSize = 100;
+        int depth = 10;
         #endregion
+
 
         public Game1()
         {
@@ -78,6 +79,9 @@ namespace pathPlanning2
             // Allows the game to exit
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
+            else if (Keyboard.GetState().IsKeyDown(Keys.PrintScreen))
+                screenShot();
+
 
             if (agent1.isMove)
             {
@@ -137,13 +141,13 @@ namespace pathPlanning2
             blank.SetData(new[] { Color.White });
             foreach (Position rec in roadmap.samplePositionList)
             {
-                spriteBatch.Draw(Content.Load<Texture2D>("randomPosition"), rec.leftUpCorner, Color.LightBlue);
                 foreach (Position nb in rec.neighborList)
                 {
                     float angle = (float)Math.Atan2(nb.leftUpCorner.Y - rec.leftUpCorner.Y, nb.leftUpCorner.X - rec.leftUpCorner.X);
                     float length = Vector2.Distance(rec.leftUpCorner, nb.leftUpCorner);
                     spriteBatch.Draw(blank, new Vector2(rec.leftUpCorner.X + 5, rec.leftUpCorner.Y + 5), null, Color.Black, angle, Vector2.Zero, new Vector2(length, (float)1), SpriteEffects.None, 0);
                 }
+                spriteBatch.Draw(Content.Load<Texture2D>("randomPosition"), rec.leftUpCorner, Color.LightBlue);
             }
             if (agent1.goalPositionLocated)
                 spriteBatch.Draw(goalPositionImageTexture, agent1.goalPosition.leftUpCorner, Color.Green);
@@ -159,7 +163,30 @@ namespace pathPlanning2
             if (agent1.startPositionLocated)
                 spriteBatch.Draw(goalPositionImageTexture, agent1.startPosition.leftUpCorner, Color.Gold);
             spriteBatch.End();
+
             base.Draw(gameTime);
+        }
+
+        private void screenShot()
+        {
+            int w = GraphicsDevice.PresentationParameters.BackBufferWidth;
+            int h = GraphicsDevice.PresentationParameters.BackBufferHeight;
+
+            //force a frame to be drawn (otherwise back buffer is empty)
+            Draw(new GameTime());
+
+            //pull the picture from the buffer
+            int[] backBuffer = new int[w * h];
+            GraphicsDevice.GetBackBufferData(backBuffer);
+            
+            //copy into a texture
+            Texture2D texture = new Texture2D(GraphicsDevice, w, h, false, GraphicsDevice.PresentationParameters.BackBufferFormat);
+            texture.SetData(backBuffer);
+
+            //save to disk
+            Stream stream = File.OpenWrite(Guid.NewGuid().ToString() + ".png");
+            texture.SaveAsPng(stream, w, h);
+            stream.Close();
         }
     }
 }
