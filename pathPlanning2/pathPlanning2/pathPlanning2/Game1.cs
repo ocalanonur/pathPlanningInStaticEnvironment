@@ -34,8 +34,8 @@ namespace pathPlanning2
         #endregion
 
         #region PathPlanningVariables
-        string gameMapString = "Map61";
-        int sampleSize = 100;
+        string gameMapString = "Map7";
+        int sampleSize = 1000;
         int depth = 10;
         #endregion
 
@@ -46,13 +46,12 @@ namespace pathPlanning2
             Content.RootDirectory = "Content";
             graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;//900GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
             graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;//600GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
-            //graphics.IsFullScreen = true;
+            graphics.IsFullScreen = true;
         }
 
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            //agentList = new List<Agent>();
             gameMap = new Map(this, gameMapString);
             base.Initialize();
         }

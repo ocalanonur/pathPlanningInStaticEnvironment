@@ -60,52 +60,76 @@ namespace pathPlanning2.classes
                     obstacleList.Add(obstacle1);
                     break;
                 case "Map4":
-                    p = new Position(new Vector2(80, 30), new Vector2(100, 450));
-                    obstacle1 = new Obstacle(game, Color.DarkRed, p);
+                    p = new Position(new Vector2(675, 20), new Vector2(10, 300));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
                     obstacleList.Add(obstacle1);
-                    p = new Position(new Vector2(270, 20), new Vector2(100, 50));
-                    obstacle1 = new Obstacle(game, Color.DarkRed, p);
+                    p = new Position(new Vector2(675, 450), new Vector2(10, 300));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
                     obstacleList.Add(obstacle1);
-                    p = new Position(new Vector2(270, 160), new Vector2(100, 50));
-                    obstacle1 = new Obstacle(game, Color.DarkRed, p);
+                    p = new Position(new Vector2(20, 375), new Vector2(585, 10));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
                     obstacleList.Add(obstacle1);
-                    p = new Position(new Vector2(270, 350), new Vector2(100, 200));
-                    obstacle1 = new Obstacle(game, Color.DarkRed, p);
-                    obstacleList.Add(obstacle1);
-                    p = new Position(new Vector2(460, 20), new Vector2(100, 450));
-                    obstacle1 = new Obstacle(game, Color.DarkRed, p);
-                    obstacleList.Add(obstacle1);
-                    p = new Position(new Vector2(660, 70), new Vector2(100, 100));
-                    obstacle1 = new Obstacle(game, Color.DarkRed, p);
-                    obstacleList.Add(obstacle1);
-                    p = new Position(new Vector2(660, 250), new Vector2(100, 500));
-                    obstacle1 = new Obstacle(game, Color.DarkRed, p);
+                    p = new Position(new Vector2(750, 375), new Vector2(600, 10));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
                     obstacleList.Add(obstacle1);
                     break;
                 case "Map5":
                     p = new Position(new Vector2(0, 80), new Vector2(40, 10));
-                    obstacle1 = new Obstacle(game, Color.Yellow, p);
+                    obstacle1 = new Obstacle(game, Color.Red, p);
                     obstacleList.Add(obstacle1);
                     p = new Position(new Vector2(150, 80), new Vector2(1400, 10));
-                    obstacle1 = new Obstacle(game, Color.Yellow, p);
+                    obstacle1 = new Obstacle(game, Color.Red, p);
                     obstacleList.Add(obstacle1);
                     p = new Position(new Vector2(0, 200), new Vector2(500, 10));
-                    obstacle1 = new Obstacle(game, Color.Yellow, p);
+                    obstacle1 = new Obstacle(game, Color.Red, p);
                     obstacleList.Add(obstacle1);
                     p = new Position(new Vector2(600, 200), new Vector2(800, 10));
-                    obstacle1 = new Obstacle(game, Color.Yellow, p);
+                    obstacle1 = new Obstacle(game, Color.Red, p);
                     obstacleList.Add(obstacle1);
-                    p = new Position(new Vector2(0, 320), new Vector2(10, 20));
-                    obstacle1 = new Obstacle(game, Color.Yellow, p);
+                    p = new Position(new Vector2(0, 320), new Vector2(10, 10));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
                     obstacleList.Add(obstacle1);
-                    p = new Position(new Vector2(150, 320), new Vector2(1000, 20));
-                    obstacle1 = new Obstacle(game, Color.Yellow, p);
+                    p = new Position(new Vector2(150, 320), new Vector2(1000, 10));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
                     obstacleList.Add(obstacle1);
-                    p = new Position(new Vector2(200, 400), new Vector2(10, 250));
-                    obstacle1 = new Obstacle(game, Color.Yellow, p);
+                    p = new Position(new Vector2(50, 350), new Vector2(10, 350));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
                     obstacleList.Add(obstacle1);
-                    p = new Position(new Vector2(350, 500), new Vector2(10, 800));
-                    obstacle1 = new Obstacle(game, Color.Yellow, p);
+                    p = new Position(new Vector2(150, 400), new Vector2(10, 350));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+                    p = new Position(new Vector2(250, 350), new Vector2(10, 350));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+                    p = new Position(new Vector2(350, 400), new Vector2(10, 350));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+                    p = new Position(new Vector2(450, 350), new Vector2(10, 350));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+                    p = new Position(new Vector2(550, 400), new Vector2(10, 350));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+                    p = new Position(new Vector2(650, 350), new Vector2(10, 350));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+                    p = new Position(new Vector2(750, 400), new Vector2(10, 350));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+                    p = new Position(new Vector2(850, 350), new Vector2(10, 350));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+                    p = new Position(new Vector2(950, 400), new Vector2(10, 350));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+                    p = new Position(new Vector2(1050, 350), new Vector2(10, 350));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+                    p = new Position(new Vector2(1150, 400), new Vector2(10, 350));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+                    p = new Position(new Vector2(1250, 350), new Vector2(10, 350));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
                     obstacleList.Add(obstacle1);
                     break;
                 case "Map6":
@@ -203,6 +227,88 @@ namespace pathPlanning2.classes
                     obstacleList.Add(obstacle1);
                     //Obstacle24
                     p = new Position(new Vector2(100, 600), new Vector2(150, 10));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+                    break;
+                case "Map7":
+                    //Obstacle1
+                    p = new Position(new Vector2(50, 50), new Vector2(1250, 10));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+                    //Obstacle2
+                    p = new Position(new Vector2(1300, 50), new Vector2(10, 650));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+                    //Obstacle3
+                    p = new Position(new Vector2(90, 700), new Vector2(1220, 10));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+                    //Obstacle4
+                    p = new Position(new Vector2(90, 120), new Vector2(10, 580));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+
+                    //Obstacle5
+                    p = new Position(new Vector2(90, 120), new Vector2(1150, 10));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+                    //Obstacle6
+                    p = new Position(new Vector2(1240, 120), new Vector2(10, 500));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+                    //Obstacle6
+                    p = new Position(new Vector2(170, 620), new Vector2(1080, 10));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+                    //Obstacle7
+                    p = new Position(new Vector2(170, 200), new Vector2(10, 420));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+
+                    //Obstacle8
+                    p = new Position(new Vector2(170, 200), new Vector2(1000, 10));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+                    //Obstacle9
+                    p = new Position(new Vector2(1170, 200), new Vector2(10, 350));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+                    //Obstacle10
+                    p = new Position(new Vector2(250, 550), new Vector2(930, 10));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+                    //Obstacle11
+                    p = new Position(new Vector2(250, 280), new Vector2(10, 270));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+
+                    //Obstacle12
+                    p = new Position(new Vector2(250, 280), new Vector2(850, 10));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+                    //Obstacle13
+                    p = new Position(new Vector2(1100, 280), new Vector2(10, 200));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+                    //Obstacle14
+                    p = new Position(new Vector2(330, 480), new Vector2(780, 10));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+                    //Obstacle15
+                    p = new Position(new Vector2(330, 360), new Vector2(10, 120));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+
+                    //Obstacle16
+                    p = new Position(new Vector2(330, 360), new Vector2(700, 10));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+                    //Obstacle17
+                    p = new Position(new Vector2(1030, 360), new Vector2(10, 70));
+                    obstacle1 = new Obstacle(game, Color.Red, p);
+                    obstacleList.Add(obstacle1);
+                    //Obstacle18
+                    p = new Position(new Vector2(400, 430), new Vector2(640, 10));
                     obstacle1 = new Obstacle(game, Color.Red, p);
                     obstacleList.Add(obstacle1);
                     break;

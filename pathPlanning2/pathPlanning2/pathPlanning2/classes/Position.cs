@@ -51,6 +51,8 @@ namespace pathPlanning2.classes
                 direction = position.leftUpCorner - virtualPosition.leftUpCorner;  // Yön belirlenir.
                 direction.Normalize();
                 virtualPosition.leftUpCorner += direction;
+                if (float.IsNaN(virtualPosition.leftUpCorner.X) || float.IsNaN(virtualPosition.leftUpCorner.Y))
+                    return false;
                 foreach (Obstacle obs in map.obstacleList)
                 {
                     if (virtualPosition.Intersect(obs.position))
