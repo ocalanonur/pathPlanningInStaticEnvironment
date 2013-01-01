@@ -18,6 +18,25 @@ namespace pathPlanning2
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        #region PathPlanningVariables
+        /// <summary>
+        /// Bu deðiþken ile deðiþik haritalar üzerinde çalýþabilirsiniz. Map1, Map2, ... , Map7
+        /// </summary>
+        string gameMapString = "Map6";  
+        /// <summary>
+        /// Bu deðiþken ile roadmap oluþturulacak yapýlandýrmalarýn örnekleme sayýsý ayarlanabilir.
+        /// </summary>
+        int sampleSize = 100;
+        /// <summary>
+        /// Her yapýlandýrmanýn etrafýnda kaç komþusuna baðlanacaðýný belirleyen deðiþkendir.
+        /// </summary>
+        int depth = 10;
+        /// <summary>
+        /// Roadmap'in ekranda gösterilip gösterilmeyeceðini ayarlar
+        /// </summary>
+        public bool drawRoadmap = true;
+        #endregion
+
         #region GameDefaults
         public GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -27,16 +46,10 @@ namespace pathPlanning2
         Map gameMap;
         Roadmap roadmap;
         //List<Agent> agentList;
-        Texture2D obstacleTexture,goalPositionImageTexture;
+        Texture2D obstacleTexture, goalPositionImageTexture;
         Agent agent1;
         MouseState mauseState;
         Position mausePosition;
-        #endregion
-
-        #region PathPlanningVariables
-        string gameMapString = "Map7";
-        int sampleSize = 1000;
-        int depth = 10;
         #endregion
 
 
@@ -80,7 +93,6 @@ namespace pathPlanning2
                 this.Exit();
             else if (Keyboard.GetState().IsKeyDown(Keys.PrintScreen))
                 screenShot();
-
 
             if (agent1.isMove)
             {
@@ -128,7 +140,6 @@ namespace pathPlanning2
 
         protected override void Draw(GameTime gameTime)
         {
-            //GraphicsDevice.Clear(Color.CornflowerBlue);
             GraphicsDevice.Clear(Color.White);
             mauseState = Mouse.GetState();
             spriteBatch.Begin();
@@ -136,17 +147,20 @@ namespace pathPlanning2
             // Drawing Obstacles
             gameMap.drawAllObstacles(spriteBatch, obstacleTexture);
 
-            Texture2D blank = new Texture2D(GraphicsDevice, 1, 1, false, SurfaceFormat.Color);
-            blank.SetData(new[] { Color.White });
-            foreach (Position rec in roadmap.samplePositionList)
+            if (drawRoadmap)
             {
-                foreach (Position nb in rec.neighborList)
+                Texture2D blank = new Texture2D(GraphicsDevice, 1, 1, false, SurfaceFormat.Color);
+                blank.SetData(new[] { Color.White });
+                foreach (Position rec in roadmap.samplePositionList)
                 {
-                    float angle = (float)Math.Atan2(nb.leftUpCorner.Y - rec.leftUpCorner.Y, nb.leftUpCorner.X - rec.leftUpCorner.X);
-                    float length = Vector2.Distance(rec.leftUpCorner, nb.leftUpCorner);
-                    spriteBatch.Draw(blank, new Vector2(rec.leftUpCorner.X + 5, rec.leftUpCorner.Y + 5), null, Color.Black, angle, Vector2.Zero, new Vector2(length, (float)1), SpriteEffects.None, 0);
+                    foreach (Position nb in rec.neighborList)
+                    {
+                        float angle = (float)Math.Atan2(nb.leftUpCorner.Y - rec.leftUpCorner.Y, nb.leftUpCorner.X - rec.leftUpCorner.X);
+                        float length = Vector2.Distance(rec.leftUpCorner, nb.leftUpCorner);
+                        spriteBatch.Draw(blank, new Vector2(rec.leftUpCorner.X + 5, rec.leftUpCorner.Y + 5), null, Color.Black, angle, Vector2.Zero, new Vector2(length, (float)1), SpriteEffects.None, 0);
+                    }
+                    spriteBatch.Draw(Content.Load<Texture2D>("randomPosition"), rec.leftUpCorner, Color.LightBlue);
                 }
-                spriteBatch.Draw(Content.Load<Texture2D>("randomPosition"), rec.leftUpCorner, Color.LightBlue);
             }
             if (agent1.goalPositionLocated)
                 spriteBatch.Draw(goalPositionImageTexture, agent1.goalPosition.leftUpCorner, Color.Green);
